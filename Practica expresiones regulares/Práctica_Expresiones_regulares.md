@@ -50,13 +50,17 @@ def tiene_h(string):
 
 tiene_h("hee")
 
-print()
+print('-----------------------------------')
 ##### **Ejercicio 4**
 #Realizá un programa que encuentre una palabra unida a otra con un guión bajo en un string dado
 #(el string no debe contener espacios).
 
+def unidas_por_guion(string):
+    print(re.findall(r'([A-Z]+[a-z]+)_([A-Z]+[a-z]+)', string))
 
+unidas_por_guion("hola_chau")
 
+print()
 ##### **Ejercicio 5**
 #Escribí un programa que diga si un string empieza con un número específico.
 def empieza_con(string, n):
