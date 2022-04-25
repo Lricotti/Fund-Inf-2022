@@ -56,7 +56,7 @@ print('-----------------------------------')
 #(el string no debe contener espacios).
 
 def unidas_por_guion(string):
-    print(re.findall(r'([A-Z]+[a-z]+)_([A-Z]+[a-z]+)', string))
+    print(re.findall(r'([a-z]+)_([a-z]+)', string))
 
 unidas_por_guion("hola_chau")
 
