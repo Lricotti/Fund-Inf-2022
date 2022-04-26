@@ -15,7 +15,7 @@ def lineadearchivo(archivo, letra):
     with open(archivo, "r") as s:
         contador = 0
         for linea in s:
-            if linea[0] == letra:
+            if linea[0] != letra:
                 contador += 1        
     print(contador) 
 
@@ -97,7 +97,7 @@ palabra_mas_larga(path)
 def join_files(file1, file2, file3):
     with open(file1, "r") as f1, open(file2, "r") as f2, open(file3, "r") as f3:
         f3.write(f1.read() + f2.read())
-join_files("Documento", "Documento2", "Documento3") #Hay q crear esos documentos y poner el path
+join_files("Documento", "Documento2", "Documento3")#Hay q crear esos documentos y poner el path
 
 ##### **Ejercicio 9**
 #Realizá un programa que lea un archivo y obtenga la frecuencia de cada palabra que hay en el archivo.
