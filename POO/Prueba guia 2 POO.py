@@ -110,9 +110,8 @@ class Ornitologo():
             ave.come(80)
             ave.vuela(70)
             ave.come(10)
-    def avesEnEquilibrio(self): #NO funciono#
-        for ave in self.aves:
-            print (ave, ave.esta_en_equilibrio())
+    def avesEnEquilibrio(self):
+        print (self.aves[i].esta_en_equilibrio() for i in range(len(self.aves)))
 
 class Golondrina():
     def __init__(self, energia):
@@ -128,7 +127,7 @@ class Golondrina():
     def esta_debil(self):
         return self.energia < 10
     def esta_en_equilibrio(self):
-        print(150 <= self.energia <= 300)
+        return 150 <= self.energia <= 300
 
 class Gorriones():
     def __init__(self):
@@ -146,17 +145,11 @@ class Gorriones():
         if gramos > self.comida_mayor:
             self.comida_mayor = gramos
     
-    def esta_en_equilibrio(self):
-        css = self.km_total / self.comida_total
-        return (0.5 <= css <= 2)
-
     def CSS(self):
         css = self.km_total / self.comida_total
         print("CSS: ", css)
-        if 0.5 <= css <= 2:
-            print("Esta en equilibrio")
-        else:
-            print("No esta en equilibrio")
+        return 0.5 <= css <= 2
+        
     
     def CSSP(self):
         cssp = self.km_mayor / self.comida_mayor
@@ -169,6 +162,8 @@ class Gorriones():
         else:
             print("CSSV: None")
 
+    def esta_en_equilibrio(self):
+        return 0.5 <= self.CSS() <=2  
 
 lucho = Ornitologo()
 golondrina_1 = Golondrina(10)
