@@ -9,7 +9,7 @@ funcion_1("xsabc9cabcb3sabc9")
 funcion_1("hola amigos mios")
 
 def funcion_1_2(string):
-    aa_gg = re.findall(r'aa([^c]*?)gg', string) #  ("^c" significa q toma cualquier valor menos la c) -- ("*" 0 o mas veces) --("?" )
+    aa_gg = re.findall(r'aa([^c]*?)gg', string) #  ("^c" significa q toma cualquier valor menos la c) -- ("*" 0 o mas veces) --("? se utiliza para q se busquen todos los matches y no solo el primer aa y el ultimo" )
     print(aa_gg)
 funcion_1_2("ttaatatggttaacatgg")
 
