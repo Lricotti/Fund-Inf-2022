@@ -15,7 +15,8 @@ def unit_txt():
         for txt in lista_txt:
             with open(txt, "r") as archivo:
                 a.write(archivo.read())
-
+unit_txt()
 #glob (short for global) is used to return all file paths that match a specific pattern.
 #We can use glob to search for a specific file pattern, or perhaps more usefully,
 #search for files where the filename matches a certain pattern by using wildcard characters.
+
