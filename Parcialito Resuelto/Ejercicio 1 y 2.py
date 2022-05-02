@@ -47,16 +47,24 @@ class Auto():
         self.rpm = 500
     
     def subirCambio(self):
-        self.cambio += 1
+        if self.cambio < 5:
+            self.cambio += 1
 
     def bajarCambio(self):
-        self.cambio -= 1
+        if self.cambio > 1:
+            self.cambio -= 1
     
     def subirRPM(self, rpm):
-        self.rpm += rpm
+        if self.rpm + rpm <= 5000:
+            self.rpm += rpm
+        else:
+            self.rpm = 5000
 
     def bajarRPM(self, rpm):
-        self.rpm -= rpm
+        if self.rpm + rpm >= 500:
+            self.rpm -= rpm
+        else:
+            self.rpm = 500
 
     def velocidad(self):
         velocidad = (self.rpm / 100) * (0.5 + (self.cambio / 2))

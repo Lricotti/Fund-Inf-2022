@@ -4,14 +4,14 @@ muestras_1 = [1, 2, 3]
 muestras_2 = []
 
 def obtener_media(lista):
+    sumatoria = 0
+    for valor in lista:
+        sumatoria += valor
+    longitud = len(lista)
     try:
-        sumatoria = 0
-        for valor in lista:
-            sumatoria += valor
-        longitud = len(lista)
         print(sumatoria / longitud) 
     except ZeroDivisionError:
-        print("La lista debe tener algun valor y ese valor =! 0")
+        print("No se puede dividir por cero")
     except TypeError:
         print("La lista solo acepta enteros")
 

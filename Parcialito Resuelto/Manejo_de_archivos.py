@@ -3,18 +3,19 @@
 
 # por otro, que lea todos los archivos con extensión `.txt` y escriba el contenido de todos en un único archivo llamado *texto_completo.txt*,
 #  que tiene que estar dentro de la carpeta _Resultado_. **NO se pueden usar rutas absolutas**
-import os
-from posixpath import abspath, relpath
-import shutil
 
-os.mkdir("Resultado") #Hay q estar parado en donde se quiere crear la carpeta, utilizando cd en la terminal y poniendo el path en donde se quiere crear#
-path = os.getcwd() 
-lista = os.listdir(path) #Dice que archivos hay en donde estes parado, en forma de lista
-for i in lista:
-    if i.endswith(".txt"):
-        with open("texto_completo.txt", "a") as f:
-            with open(i, "r") as g:
-                f.write(g.read())
+import os, glob
 
-shutil.move("texto_completo.txt", "Resultado/texto_completo.txt") #Mueve el archivo texto_completo dentro de la carepta Resultado
+#Esta es la forma correcta
 
+def unit_txt():
+    os.mkdir("Resultado")
+    lista_txt = glob.glob("*.txt")
+    with open("Resultado/texto_completo.txt", "a") as a:
+        for txt in lista_txt:
+            with open(txt, "r") as archivo:
+                a.write(archivo.read())
+
+#glob (short for global) is used to return all file paths that match a specific pattern.
+#We can use glob to search for a specific file pattern, or perhaps more usefully,
+#search for files where the filename matches a certain pattern by using wildcard characters.
